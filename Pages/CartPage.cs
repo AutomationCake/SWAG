@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +10,8 @@ namespace SWAG.Pages
 {
     public class CartPage
     {
-        public static By productLabel { get { return By.ClassName("subheader"); } }
+
+        public static  By productLabel { get { return By.ClassName("subheader"); } }
 
         public static By cart_quantity_label { get { return By.ClassName("cart_quantity_label"); } }
 
@@ -30,4 +32,6 @@ namespace SWAG.Pages
         
 
     }
+
+   
 }

@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using SWAG.Pages;
 using SWAG.Utilities;
+using System.Reflection;
 using TechTalk.SpecFlow;
 
 namespace SWAG.StepDefinitions
@@ -10,23 +11,35 @@ namespace SWAG.StepDefinitions
     public class Product_Stepdefinition
     {
         private IWebDriver driver;
+        private string getprice = "";
 
         public Product_Stepdefinition(IWebDriver driver)
         {
             this.driver = driver;
         }
 
+        
+
         [Given(@"Navigate to product page")]
         public void GivenNavigateToProductPage()
         {
+
+           By prodcu =  element.GetPropertyByName("openMenu");
+
+            Actionutility.ActionClick(driver, prodcu);
+
             Actionutility.ActionClick(driver, ProductPage.openMenu);
             Actionutility.Click(driver, ProductPage.allItems);
+
+            getprice = "test";
         }
 
         [Then(@"user able to see the open menu")]
         public void ThenUserAbleToSeeTheOpenMenu()
         {
             Assert.IsTrue(Actionutility.IsElementDisplayed(driver, ProductPage.openMenu));
+
+            string str = getprice;
                 
         }
 

@@ -8,7 +8,8 @@ namespace SWAG.Support
 
     public class ExtentReportsHelper
     {
-
+        const string getValue = "";
+        static readonly string getValue1;
 
 
         public static ExtentReports GetExtent(string featureFileName)
@@ -18,10 +19,12 @@ namespace SWAG.Support
             string projectDirectory1 = Environment.CurrentDirectory;
             string getPath = projectDirectory1.Substring(0, projectDirectory1.LastIndexOf("bin"));
             string reportPath = getPath + "Report\\" + featureFileName + ".html";
+
             var htmlReporter = new ExtentSparkReporter(reportPath);
             _extent = new ExtentReports();
             _extent.AttachReporter(htmlReporter);
 
+        
 
             return _extent;
         }

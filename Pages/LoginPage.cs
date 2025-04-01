@@ -3,6 +3,7 @@ using SWAG.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,5 +23,11 @@ namespace SWAG.Pages
             Actionutility.SendKeys(driver, password, _password);
             Actionutility.Click(driver, loginbutton);
         }
+
+
+
     }
+
+
+  
 }

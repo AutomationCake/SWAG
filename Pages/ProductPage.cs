@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SWAG.Pages
 {
-    public class ProductPage
+    public class ProductPage : CartPage
     {
        
         public static By openMenu { get { return By.ClassName("bm-burger-button"); } }
@@ -27,8 +28,5 @@ namespace SWAG.Pages
         public static By removeButton(string productName) { { return By.XPath($"//div[text()='{productName}']/../../..//button[text()='REMOVE']"); } }
 
         public static By shopping_cart_badge { get { return By.XPath("//span[contains(@class,'shopping_cart_badge')]"); } }
-
-        
-
     }
 }

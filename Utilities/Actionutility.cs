@@ -250,7 +250,11 @@ namespace SWAG.Utilities
             {
                 WaitForVisible(driver, ele);
                 SelectElement select = new SelectElement(driver.FindElement(ele));
+                
                 string getSelectedOption = select.SelectedOption.Text;
+
+                
+               
                 return getSelectedOption;
             }
             catch (Exception ex)

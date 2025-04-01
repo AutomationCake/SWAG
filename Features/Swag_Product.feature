@@ -1,5 +1,6 @@
 ﻿Feature: To verify the product page
 
+
 @product-01
 Scenario: To verify all the element is present or not in the product page
 	Given Navigate to product page
@@ -10,14 +11,19 @@ Scenario: To verify all the element is present or not in the product page
 	Then use able to see the shopping cart
 
 @product
-Scenario: To verify user able to add the product
+Scenario Outline: To verify user able to add the product
 	Given Navigate to product page
-	When user select the product "Sauce Labs Backpack" and click Add to cart
-	Then user able to see remove button "Sauce Labs Backpack"
+	When user select the product "<ProductName>" and click Add to cart
+	Then user able to see remove button "<ProductName>"
 	Then user able to see the cart count "1"
-	When user select the product "Sauce Labs Backpack" and click remove
-	Then user not able to see remove button "Sauce Labs Backpack"
+	When user select the product "<ProductName>" and click remove
+	Then user not able to see remove button "<ProductName>"
 	Then user not able to see the cart count
+
+Examples:
+	| ProductName         |
+	| Sauce Labs Backpack |
+
 
 @product
 Scenario: To verify user able to add and remove the product in cart page
